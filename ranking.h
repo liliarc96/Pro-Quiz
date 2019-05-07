@@ -1,3 +1,6 @@
+#ifndef RANKING_H
+#define RANKING_H
+
 typedef struct t_usuario{
     char nome [100];
     unsigned int vitorias;
@@ -53,3 +56,5 @@ int main(){
     fclose(arquivo);
     return 0;
 }
+
+#endif /* RANKING_H */
