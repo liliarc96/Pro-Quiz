@@ -1,3 +1,6 @@
+#ifndef MENU_H
+#define MENU_H
+
 void menu(){
   printf("\n    ----MENU----\n\n");
   printf("1: Jogar;\n\n");
@@ -7,3 +10,5 @@ void menu(){
   printf("0: Sair;\n\n\n");
   printf("Digite uma opção do menu: ");
 }
+
+#endif /* MENU_H */
