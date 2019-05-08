@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include <locale.h>
 //Headers:
 #include "ranking.h"
 #include "menu.h"
 
 int main(void) {
+  
+  //Muda para o idioma do sistema:
+  setlocale(LC_ALL,"Portuguese");
+  
   //Variáveis de controle:
   int opcao, repeticao;
   
