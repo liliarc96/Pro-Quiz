@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef MENU_H_INCLUDED
+#define MENU_H_INCLUDED
 
 void menu(){
   printf("\n    ----MENU----\n\n");
@@ -11,4 +11,4 @@ void menu(){
   printf("Digite uma opção do menu: ");
 }
 
-#endif /* MENU_H */
+#endif // MENU_H_INCLUDED
