@@ -1,14 +1,26 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
 
+void titulo(){
+    printf("\n\n _______________________________________________________________________________________  "
+           "\n                                                                                       "
+           "\n                                         QUIZ                                          "
+           "\n                                                                                       "
+           "\n"
+           " _______________________________________________________________________________________  \n\n\n\n\n\n");
+}
+
 void menu(){
-  printf("\n    ----MENU----\n\n");
-  printf("1: Jogar;\n\n");
-  printf("2: Ver Ranking;\n\n");
-  printf("3: Cadastrar Perguntas;\n\n");
-  printf("4: Creditos;\n\n");
-  printf("0: Sair;\n\n\n");
-  printf("Digite uma opção do menu: ");
+  printf("\n\n________________________________________________________________________________________\n"
+         "1: Jogar;\n\n"
+         "2: Ver Ranking;\n\n"
+         "3: Cadastrar Perguntas;\n\n"
+         "4: Creditos;\n\n"
+         "0: Sair;\n"
+         "________________________________________________________________________________________");
+
+  printf("\n\nDigite uma opção do menu:\n"
+         "> ");
 }
 
 #endif // MENU_H_INCLUDED
