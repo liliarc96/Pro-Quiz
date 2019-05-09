@@ -22,12 +22,16 @@ int main() {
   while(repeticao == 1){
     switch(opcao){
       case 1:
-        printf("\n----COMEÇAR JOGO----\n\nDigite um número: ");
+        printf("\n----COMEÇAR JOGO----\n\n");
         menu();
         scanf("%d", &opcao);
         break;
       case 2:
-        printf("\n----VER RANKING----\n\nDigite um número: ");
+        printf("\n----VER RANKING----\n\n");
+        
+        nomeArquivo = "ranking.txt";
+        abrirArquivo(nomeArquivo);
+        
         menu();
         scanf("%d", &opcao);
         break;
