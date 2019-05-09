@@ -2,16 +2,18 @@
 #include <stdlib.h>
 #include <locale.h>
 //Headers:
-#include "ranking.h"
+#include "manipular_arquivo.h"
 #include "menu.h"
 
-int main(void) {
+int main() {
   
   //Muda para o idioma do sistema:
   setlocale(LC_ALL,"Portuguese");
   
   //Variáveis de controle:
-  int opcao, repeticao;
+  int opcao, repeticao = 1;
+  char opcaoMenu;
+  char * nomeArquivo;
   
   //Chama o menu:
   menu();
@@ -31,6 +33,28 @@ int main(void) {
         break;
       case 3:
         printf("\n----CADASTRAR PERGUNTAS----\n\n");
+        printf("Deseja cadastrar uma pergunta de qual dificuldade?\n"
+               "Pressione E para fáceis, M para intermediárias e H para difíceis\n");
+        
+        fflush(stdin);
+        opcaoMenu = getchar();
+        
+        if(opcaoMenu == 'E'){
+            printf("\nEscolheu perguntas fáceis.");
+            nomeArquivo = "perguntasfaceis.txt";
+            abrirArquivo(nomeArquivo);
+        }else if(opcaoMenu == 'M'){
+            printf("\nEscolheu perguntas intermediárias.");
+            nomeArquivo = "perguntasintermediarias.txt";
+            abrirArquivo(nomeArquivo);
+        }else if(opcaoMenu == 'H'){
+            printf("\nEscolheu perguntas difíceis.");
+            nomeArquivo = "perguntasdificeis.txt";
+            abrirArquivo(nomeArquivo);
+        }else{
+            printf("\nOpção incorreta.");
+        }
+        
         menu();
         scanf("%d", &opcao);
         break;
