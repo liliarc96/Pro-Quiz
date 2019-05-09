@@ -11,7 +11,7 @@ int main()
 
   //Variáveis de controle:
   int opcao, repeticao = 1;
-  char opcaoMenu;
+  char dificuldade;
   char * nomeArquivo;
 
   //Intro,aparece o título e após isso a tela limpa
@@ -40,7 +40,9 @@ int main()
         printf("\n----VER RANKING----\n\n");
 
         nomeArquivo = "ranking.txt";
-        abrirArquivo(nomeArquivo);
+        abrirRanking(nomeArquivo);
+        printf("\n");
+
         system("pause");
         menu();
         scanf("%d", &opcao);
@@ -48,27 +50,29 @@ int main()
         break;
       case 3:
         printf("\n----CADASTRAR PERGUNTAS----\n\n");
-        printf("Deseja cadastrar uma pergunta de qual dificuldade?"
+        printf("Deseja cadastrar uma pergunta de qual dificuldade?\n"
                "\nPressione E para fáceis, M para intermediárias e H para difíceis\n");
 
         fflush(stdin);
-        opcaoMenu = getchar();
+        dificuldade = getchar();
 
-        if(opcaoMenu == 'E'){
-            printf("\nEscolheu perguntas fáceis.");
+        if(dificuldade == 'E'){
+            printf("\nEscolheu perguntas fáceis.\n\n");
             nomeArquivo = "perguntasfaceis.txt";
             abrirArquivo(nomeArquivo);
-        }else if(opcaoMenu == 'M'){
-            printf("\nEscolheu perguntas intermediárias.");
+        }else if(dificuldade == 'M'){
+            printf("\nEscolheu perguntas intermediárias.\n\n");
             nomeArquivo = "perguntasintermediarias.txt";
             abrirArquivo(nomeArquivo);
-        }else if(opcaoMenu == 'H'){
-            printf("\nEscolheu perguntas difíceis.");
+        }else if(dificuldade == 'H'){
+            printf("\nEscolheu perguntas difíceis.\n\n");
             nomeArquivo = "perguntasdificeis.txt";
             abrirArquivo(nomeArquivo);
         }else{
             printf("\nOpção incorreta.");
         }
+
+        printf("\n");
         system("pause");
         menu();
         scanf("%d", &opcao);
@@ -86,7 +90,7 @@ int main()
         break;
       case 0:
         system("cls");
-        printf("\nAdeus!\n");
+        printf("\nAdeus!");
         repeticao = 0;
         break;
       default:
