@@ -29,6 +29,10 @@ int abrirArquivo(char * nArquivo){
             putchar(caractere);
 
         } while(caractere != EOF);
+
+        /*
+        EOF significa End Of Line /!\
+        */
     }
 
     //Fechar arquivo:
@@ -36,19 +40,17 @@ int abrirArquivo(char * nArquivo){
     return 0;
 }
 
-int abrirRanking(char * nArquivo){
+int abrirRanking(){
     FILE * arquivo;
     char caractere;
 
 
     //Abre arquivo:
-    arquivo = fopen(nArquivo, "r");
+    arquivo = fopen("pontuacao.txt", "r");
     if(arquivo == NULL){
        printf("\nO arquivo não pode ser aberto...");
        exit(EXIT_FAILURE);
     }else{
-        printf("\nSe você estiver lendo essa mensagem, o arquivo '%s' foi aberto corretamente!\n\n", nArquivo);
-
         do{
             caractere = fgetc(arquivo);
             if(caractere == EOF){
