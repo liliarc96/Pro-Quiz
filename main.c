@@ -86,7 +86,7 @@ int main()
         break;
       case 0:
         system("cls");
-        printf("\nAdeus!");
+        printf("\nAdeus!\n");
         repeticao = 0;
         break;
       default:
