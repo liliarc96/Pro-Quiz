@@ -1,0 +1,9 @@
+https://www.programmingsimplified.com/c/conio.h/textbackground
+https://www.programmingsimplified.com/c/conio.h/textcolor
+https://www.programmingsimplified.com/c/graphics.h/settextstyle
+https://www.programmingsimplified.com/c/graphics.h/textheight
+https://www.programmingsimplified.com/c/graphics.h/textwidth
+https://www.programmingsimplified.com/c/graphics.h/setviewport
+https://www.programmingsimplified.com/c/graphics.h/setlinestyle
+https://www.programmingsimplified.com/c/graphics.h/rectangle
+https://www.programmingsimplified.com/c/graphics.h/putimage
