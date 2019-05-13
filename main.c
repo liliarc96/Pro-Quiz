@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
 #include "manipular_arquivo.h"
 #include "menu.h"
 
 int main()
 {
-  //Muda para o idioma do sistema:
+  //Muda para o idioma:
   setlocale(LC_ALL,"Portuguese");
 
   //Variáveis de controle:
@@ -31,6 +32,7 @@ int main()
         /*
         Alguma coisa aparece na tela...
         */
+        guia();
         system("pause");
         menu();
         scanf("%d", &opcao);
