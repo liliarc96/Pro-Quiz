@@ -9,7 +9,7 @@ typedef struct t_quiz{
     struct t_quiz * proximo;
 } quiz;
 
-int quiz(char * nArquivo){
+int startquiz(char * nArquivo){
 
     FILE * arquivo = fopen(nArquivo, "r");
     if(!arquivo) return 0;
