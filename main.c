@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <windows.h>
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
+#include <stdbool.h>
+#include <time.h>
+
 #include "manipular_arquivo.h"
 #include "menu.h"
+#include "ranking.h"
+#include "perguntas.h"
 
 int main()
 {
