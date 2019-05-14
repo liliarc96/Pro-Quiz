@@ -66,15 +66,15 @@ int main()
         if(dificuldade == 'E'){
             printf("\nEscolheu perguntas fáceis.\n\n");
             nomeArquivo = "perguntasfaceis.txt";
-            abrirArquivo(nomeArquivo);
+            modificarArquivo(nomeArquivo);
         }else if(dificuldade == 'M'){
             printf("\nEscolheu perguntas intermediárias.\n\n");
             nomeArquivo = "perguntasintermediarias.txt";
-            abrirArquivo(nomeArquivo);
+            modificarArquivo(nomeArquivo);
         }else if(dificuldade == 'H'){
             printf("\nEscolheu perguntas difíceis.\n\n");
             nomeArquivo = "perguntasdificeis.txt";
-            abrirArquivo(nomeArquivo);
+            modificarArquivo(nomeArquivo);
         }else{
             printf("\nOpção incorreta.");
         }
