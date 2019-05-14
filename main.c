@@ -40,6 +40,9 @@ int main()
         */
         guia();
         system("pause");
+        system("cls");
+        startquiz(nomeArquivo);
+        system("cls");
         menu();
         scanf("%d", &opcao);
         system("cls");
