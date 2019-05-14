@@ -11,3 +11,4 @@ https://www.programmingsimplified.com/c/graphics.h/putimage
 https://stackoverflow.com/questions/11280523/c-reading-from-file-into-structure
 https://stackoverflow.com/questions/33781720/making-a-quiz-game-in-c
 https://pt.stackoverflow.com/questions/45642/como-guardar-ler-lista-encadeada-em-arquivo
+https://stackoverflow.com/questions/2347770/how-do-you-clear-the-console-screen-in-c
