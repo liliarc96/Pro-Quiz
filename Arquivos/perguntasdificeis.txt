@@ -1,7 +1,7 @@
 Quiz Difícil
 Em que país foi construído o RMS Titanic? | Inglaterra | Alemanha | Noruega | Escócia | Irlanda
 A afirmação "A ilha da Páscoa é vulcânica", é verdadeira ou falsa? | Verdadeira | Falsa
-Um ser aeróbico é um ser: | Seres que utilizam Gás Carbônico em sua respiração | Seres que utilizam Gás Oxigênio em sua respiração | Seres que voam numa superfície abaixo da Exosfera | 
+O que é um ser aeróbico? | Seres que utilizam Gás Carbônico em sua respiração | Seres que utilizam Gás Oxigênio em sua respiração | Seres que voam numa superfície abaixo da Exosfera | 
 Seres que utilizam o Gás Oxigênio para voar numa superfície abaixo da Exosfera
 Qual desses seres é responsável por mais mortes no mundo? | Leão | Elefante | Cobra | Mosquito | Leopardo
 Qual foi a maior tragédia ocorrida em um Metrô? | Atentado ocorrido em Daegu, terceira maior cidade da Coréia do Sul | Colapso na obra da estação de Pinheiros, em São Paulo | Baku, capital do Azerbaijão (ex-União Soviética) em consequência de um incêndio | Intoxicação por fumaça numa plataforma do metropolitain de Paris, em 1903 | Choque de dois trens em Roma, 2006
@@ -9,4 +9,4 @@ Quanto demorou o Taj Mahal a ser construido? | 20 a 25 anos | 10 a 15 anos | 30 
 Quais os gases nobres? | Gás argônio, gás niôneo, gás exollit, gás fazz | Gás randônio, gás hélio, gás xenônio, gás neônio, gás argônio | Gás randônio, gás hélio, gás xenônio, gás neônio, gás argônio e gás criptônico | Gás Oxigênio, Gás Carbônico, Gás Ellio | Atmosfera, Hidrosfera, Litosfera, Biosfera
 Você sabe que Claustrofobia é o medo de espaços ou lugares fechados. Em X-men qual é o personagem que tem essa fobia? | Noturno | Tempestade | Lince Negra | Vampira | Wolverine
 Quem tem Hexacosioihexecontahexafobia tem medo do quê? | Do Apocalipse | Do ano de 2012 | Do número 666 | Tuberculose | Palavras grandes
-O dia do planeta Júpiter é comemorado no dia 13 de Setembro. A afirmação é: | Verdadeira | Falsa | Não existe o dia do planeta Júpiter
+O dia do planeta Júpiter é comemorado no dia 13 de Setembro? | Verdadeiro | Falso | Não existe o dia do planeta Júpiter
