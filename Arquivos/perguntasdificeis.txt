@@ -1,8 +1,5 @@
 Quiz Difícil
-Quais são os 4 presidentes que estão no Monte Rushmore? | Ahbram Liconln, George Washington, Thomas Jefferson, John Adams | 
-Ahbram Liconln, James K. Polk, Thomas Jefferson, Theodore Roosevelt | 
-Ahbram Liconln, George Washington, Thomas Jefferson, Theodore Roosevelt | Ahbram Liconln, George Washington, James Monroe, Theodore Roosevelt | 
-Barack Obama, George Washington, Thomas Jefferson, Theodore Roosevelt
+Em que país foi construído o RMS Titanic? | Inglaterra | Alemanha | Noruega | Escócia | Irlanda
 A afirmação "A ilha da Páscoa é vulcânica", é verdadeira ou falsa? | Verdadeira | Falsa
 Um ser aeróbico é um ser: | Seres que utilizam Gás Carbônico em sua respiração | Seres que utilizam Gás Oxigênio em sua respiração | Seres que voam numa superfície abaixo da Exosfera | 
 Seres que utilizam o Gás Oxigênio para voar numa superfície abaixo da Exosfera
