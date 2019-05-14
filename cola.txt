@@ -58,7 +58,7 @@ Números de cada arquivo:
 
     Linhas das respostas: 2n, sendo "n" o número da resposta (par)
     /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-    H1 = R3;
+    H1 = R5;
     H2 = R1;
     H3 = R1;
     H4 = R4;
