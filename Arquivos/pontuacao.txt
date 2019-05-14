@@ -1,0 +1,3 @@
+Fulana: 100
+Sicrana: 43
+Beltrana: 27
