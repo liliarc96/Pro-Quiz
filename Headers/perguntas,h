@@ -19,9 +19,10 @@ int startquiz(char * nArquivo){
 
     char linha[150];
     if(fgets(linha, 150, arquivo)==0) return 0;
-    //printf("Lido: %s", linha);
-    char * pergunta = strtok(linha, ":");
-    char * str_resposta = strtok(0,":");
+    printf("Lido: %s", linha);
+    \*
+    char * pergunta = strtok(linha, "?");
+    char * str_resposta = strtok(0,"|");
     quiz * usr1 = (quiz *) malloc(sizeof(quiz));
     if(!usr1) return 0;
     strcpy(usr1->pergunta, pergunta);
@@ -58,7 +59,7 @@ int startquiz(char * nArquivo){
     }
 
 
-    free(usr1);
+    free(usr1);*\
     fclose(arquivo);
     return 0;
 }
