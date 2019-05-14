@@ -1,5 +1,0 @@
-SCORES:
-
-Fulana : 100 ponto(s)
-Sicrana : 43 ponto(s)
-Beltrana : 27 ponto(s)
