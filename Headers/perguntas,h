@@ -1,6 +1,8 @@
 #ifndef PERGUNTAS_H_INCLUDED
 #define PERGUNTAS_H_INCLUDED
 
+//TESTE
+
 typedef struct t_quiz{
     char pergunta [10000];
     char resposta [10000];
