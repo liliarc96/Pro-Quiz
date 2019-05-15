@@ -67,15 +67,12 @@ int main()
         dificuldade = getchar();
 
         if(dificuldade == 'E'){
-            printf("\nEscolheu perguntas fáceis.\n\n");
             nomeArquivo = "perguntasfaceis.txt";
             modificarArquivo(nomeArquivo);
         }else if(dificuldade == 'M'){
-            printf("\nEscolheu perguntas intermediárias.\n\n");
             nomeArquivo = "perguntasintermediarias.txt";
             modificarArquivo(nomeArquivo);
         }else if(dificuldade == 'H'){
-            printf("\nEscolheu perguntas difíceis.\n\n");
             nomeArquivo = "perguntasdificeis.txt";
             modificarArquivo(nomeArquivo);
         }else{
