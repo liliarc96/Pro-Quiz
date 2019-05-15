@@ -1,5 +1,5 @@
 Quiz Intermediário 
-Um analgésico é um agente para: | Tratamento do intestino | Alívio de Stress | Alívio da dor | Tratamento da caspa
+Um analgésico é um agente que age como? | Tratamento do intestino | Alívio de Stress | Alívio da dor | Tratamento da caspa
 Qual destes itens não é encontrado em uma bicicleta comum? | Air Bag | Guidão | Selim | Corrente
 Qual presidente brasileiro renunciou em 1992? | Itamar Franco | Fernando Collor | José Sarney | Figueiredo
 Qual destas músicas foi composta por Adoniran Barbosa? | Trem das Onze | Máscara Negra | Chiquita Bacana | Jardineira
@@ -8,6 +8,6 @@ Qual é o nome do osso da coxa do ser humano? | Fêmur | Tíbia | Perônio | Úm
 Por quem foi dita a frase: “Abra-te Sézamo”? | D. Pedro I | Hércules | Ali Babá | Dunga
 Quem foi o provável assassino de John Kennedy? | Alexander Burr | Lee Harvey Oswald | Billy the Kid | Eliott Ness
 Para que máquina Elicha Graves Otis inventou um sistema de segurança? | Ônibus | Trem | Elevador | Táxi
-O coração é: | Uma fibra | Uma mucosa | Uma víscera | Um músculo
+O que é um coração? | Uma fibra | Uma mucosa | Uma víscera | Um músculo
 
 
