@@ -16,3 +16,4 @@ https://codereview.stackexchange.com/questions/51606/creating-an-array-of-string
 https://pastebin.com/BGRPDNqM
 https://stackoverflow.com/questions/8975369/reading-lines-out-of-a-file-and-putting-them-into-a-string-array
 https://www.clubedohardware.com.br/forums/topic/1209020-passar-dados-de-um-arquivo-para-vetor-de-strings/
+https://www.embarcados.com.br/vetor-de-struct/
