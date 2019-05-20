@@ -1,13 +1,12 @@
-Quiz Intermediário 
-Um analgésico é um agente que age como? | Tratamento do intestino | Alívio de Stress | Alívio da dor | Tratamento da caspa
-Qual destes itens não é encontrado em uma bicicleta comum? | Air Bag | Guidão | Selim | Corrente
-Qual presidente brasileiro renunciou em 1992? | Itamar Franco | Fernando Collor | José Sarney | Figueiredo
-Qual destas músicas foi composta por Adoniran Barbosa? | Trem das Onze | Máscara Negra | Chiquita Bacana | Jardineira
-Qual nome é dado à criança ainda não batizada? | Pagão | Anão | Chorão | Cristão 
-Qual é o nome do osso da coxa do ser humano? | Fêmur | Tíbia | Perônio | Úmero
-Por quem foi dita a frase: “Abra-te Sézamo”? | D. Pedro I | Hércules | Ali Babá | Dunga
-Quem foi o provável assassino de John Kennedy? | Alexander Burr | Lee Harvey Oswald | Billy the Kid | Eliott Ness
-Para que máquina Elicha Graves Otis inventou um sistema de segurança? | Ônibus | Trem | Elevador | Táxi
-O que é um coração? | Uma fibra | Uma mucosa | Uma víscera | Um músculo
+Um analgesico e um agente que age como? 
+Qual destes itens nao e encontrado em uma bicicleta comum? 
+Qual presidente brasileiro renunciou em 1992? 
+Qual destas musicas foi composta por Adoniran Barbosa? 
+Qual nome e dado a criança ainda nao batizada? 
+Qual e o nome do osso da coxa do ser humano? 
+Por quem foi dita a frase: “Abra-te Sezamo”? 
+Quem foi o provavel assassino de John Kennedy? 
+Para que maquina Elicha Graves Otis inventou um sistema de seguranca? 
+O que e um coracao? 
 
 

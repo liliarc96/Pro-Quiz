@@ -1,0 +1,10 @@
+| 50 | 100 | 2.500 | 60
+| Caju | Abobora | Chuchu | Coco
+| Joaozinho Trinta | Zeca Pagodinho | Chiquinho Scarpa | Chico Buarque
+| Joana D'arc | Anita Garibaldi | Princeza Isabel | Imperatriz Leopoldina
+| Londres | Nova Iorque | Madrid | Paris
+| Folhas caidas | Leite derramado | Doce queimado | Pao velho
+| Robo | Marionete | Androide | Manequim
+| Esconde-esconde | Bingo | Banco Imobiliario | Xadrez
+| Robin Hood | Simbad | Indiana Jones | Zorro
+| Licor | Doce | Tempero | Pao
