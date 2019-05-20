@@ -18,3 +18,4 @@ https://stackoverflow.com/questions/8975369/reading-lines-out-of-a-file-and-putt
 https://www.clubedohardware.com.br/forums/topic/1209020-passar-dados-de-um-arquivo-para-vetor-de-strings/
 https://www.embarcados.com.br/vetor-de-struct/
 https://stackoverflow.com/questions/14088804/how-to-return-matrix-2d-array-from-function-c
+https://www.youtube.com/watch?v=2pBVlpLM1Sc
