@@ -1,13 +1,10 @@
-Quiz Difícil
-Em que país foi construído o RMS Titanic? | Inglaterra | Alemanha | Noruega | Escócia | Irlanda
-A afirmação "A ilha da Páscoa é vulcânica", é verdadeira ou falsa? | Verdadeira | Falsa
-O que é um ser aeróbico? | Seres que utilizam Gás Carbônico em sua respiração | Seres que utilizam Gás Oxigênio em sua respiração | Seres que voam numa superfície abaixo da Exosfera | 
-Seres que utilizam o Gás Oxigênio para voar numa superfície abaixo da Exosfera
-Qual desses seres é responsável por mais mortes no mundo? | Leão | Elefante | Cobra | Mosquito | Leopardo
-Qual foi a maior tragédia ocorrida em um Metrô? | Atentado ocorrido em Daegu, terceira maior cidade da Coréia do Sul | Colapso na obra da estação de Pinheiros, em São Paulo | Baku, capital do Azerbaijão (ex-União Soviética) em consequência de um incêndio | Intoxicação por fumaça numa plataforma do metropolitain de Paris, em 1903 | Choque de dois trens em Roma, 2006
-Quanto demorou o Taj Mahal a ser construido? | 20 a 25 anos | 10 a 15 anos | 30 a 40 anos | Mais de 40 anos | Menos de 10 anos
-Quais os gases nobres? | Gás argônio, gás niôneo, gás exollit, gás fazz | Gás randônio, gás hélio, gás xenônio, gás neônio, gás argônio | Gás randônio, gás hélio, gás xenônio, gás neônio, gás argônio e gás criptônico | Gás Oxigênio, Gás Carbônico, Gás Ellio | Atmosfera, Hidrosfera, Litosfera, Biosfera
-Você sabe que Claustrofobia é o medo de espaços ou lugares fechados. Em X-men qual é o personagem que tem essa fobia? | Noturno | Tempestade | Lince Negra | Vampira | Wolverine
-Quem tem Hexacosioihexecontahexafobia tem medo do quê? | Do Apocalipse | Do ano de 2012 | Do número 666 | Tuberculose | Palavras grandes
-O dia do planeta Júpiter é comemorado no dia 13 de Setembro? | Verdadeiro | Falso | Não existe o dia do planeta Júpiter
-
+Em que pais foi construido o RMS Titanic? 
+O que ficava localizada entre as patas dianteiras da Esfinge, na Necropole de Gize? 
+Em 2013, um shopping brasileiro construiu um Papai Noel de 20 metros, e foi considerado como o maior do mundo ultrapassando o de Cingapura, que figurou por 14 anos no livro mundial dos recordes. Em qual cidade fica o Maior Papai Noel do mundo? 
+Qual desses seres e responsavel por mais mortes no mundo? 
+Qual foi a maior tragedia ocorrida em um Metro? 
+Quanto demorou o Taj Mahal a ser construido? 
+Quais os gases nobres? 
+Voce sabe que Claustrofobia e o medo de espaços ou lugares fechados. Em X-men qual e o personagem que tem essa fobia? 
+Quem tem Hexacosioihexecontahexafobia tem medo do que? 
+Qual desses personagens fazia parte dos novos Thundercats?
