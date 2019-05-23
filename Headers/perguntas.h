@@ -1,7 +1,7 @@
 #ifndef PERGUNTAS_H_INCLUDED
 #define PERGUNTAS_H_INCLUDED
 
-//TESTE: gera números aleatórios SEM repetição e retorna o número da questão
+//TESTE: gera números aleatórios SEM repetição e retorna o número da questão & resposta correspondente
 int geradorAleatorio(){
     int r, i, n = 10;
     bool arr[10] = {0}; //array booleano contendo somente false
