@@ -24,3 +24,4 @@ https://stackoverflow.com/questions/16452850/quiz-questions-from-txt-file-into-a
 http://i.stack.imgur.com/E8LtH.png
 https://stackoverflow.com/questions/29527960/randomizing-questions-on-a-quiz-and-calculating-percentage-correct-in-c
 https://stackoverflow.com/questions/23856482/how-to-loop-through-data-file-to-fill-in-structs
+https://stackoverflow.com/questions/34046943/reading-line-by-line-and-storing-in-an-array-of-structure
