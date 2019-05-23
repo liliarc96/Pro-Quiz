@@ -19,3 +19,7 @@ https://www.clubedohardware.com.br/forums/topic/1209020-passar-dados-de-um-arqui
 https://www.embarcados.com.br/vetor-de-struct/
 https://stackoverflow.com/questions/14088804/how-to-return-matrix-2d-array-from-function-c
 https://www.youtube.com/watch?v=2pBVlpLM1Sc
+https://stackoverflow.com/questions/23793184/not-sure-how-to-structure-code-for-a-quiz-program
+https://stackoverflow.com/questions/16452850/quiz-questions-from-txt-file-into-array-in-c
+http://i.stack.imgur.com/E8LtH.png
+https://stackoverflow.com/questions/29527960/randomizing-questions-on-a-quiz-and-calculating-percentage-correct-in-c
