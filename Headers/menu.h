@@ -1,18 +1,20 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
-
+/*
+Header para gráficos do jogo
+*/
 void titulo(){
     printf("\n\n _______________________________________________________________________________________  "
-           "\n"
+           "\n                                                                                       "
            "\n                                         QUIZ                                          "
-           "\n"
+           "\n                                                                                       "
            "\n"
            " _______________________________________________________________________________________  \n\n\n\n\n\n");
 }
 
 void guia(){
     //Como jogar fica aqui
-    printf("Isso щ um guia do jogo...\n\n");
+    printf("Guia do jogo...\n\n");
 }
 
 void menu(){
@@ -24,7 +26,7 @@ void menu(){
          "0: Sair;\n"
          "________________________________________________________________________________________");
 
-  printf("\n\nDigite uma opção do menu:\n"
+  printf("\n\n"
          "> ");
 }
 
