@@ -19,7 +19,9 @@ int main()
   //Variáveis de controle:
   int opcao, repeticao = 1;
   char dificuldade;
-  char* nomeArquivo;
+  char * perguntas;
+  char * respostas;
+
 
   //Intro,aparece o título e após isso a tela limpa
   titulo();
@@ -42,7 +44,7 @@ int main()
         INSTRUÇÕES
 
         */
-        guia(); //Instruções
+        guia();
 
         printf("\nDigite a dificuldade: "
                "\nPressione E para faceis, M para intermediarias e H para dificeis\n");
@@ -51,26 +53,30 @@ int main()
         dificuldade = getchar();
 
         if(dificuldade == 'E'){
-            nomeArquivo = "perguntasfaceis.txt";
+            perguntas = "perguntasfaceis.txt";
         }else if( dificuldade == 'M'){
-            nomeArquivo = "perguntasintermediarias.txt";
+            perguntas = "perguntasintermediarias.txt";
         }else if(dificuldade == 'H'){
-            nomeArquivo = "perguntasdificeis.txt";
+            perguntas = "perguntasdificeis.txt";
         }
 
-        perguntasToChar(nomeArquivo);
+
+        //perguntasToChar(nomeArquivo);
 
         if(dificuldade == 'E'){
-            nomeArquivo = "respostasfaceis.txt";
+            respostas = "respostasfaceis.txt";
         }else if( dificuldade == 'M'){
-            nomeArquivo = "respostasintermediarias.txt";
+            respostas = "respostasintermediarias.txt";
         }else if(dificuldade == 'H'){
-            nomeArquivo = "respostasdificeis.txt";
+            respostas = "respostasdificeis.txt";
         }
+        system("cls");
 
-        respostasToChar(nomeArquivo);
+        startquiz(perguntas, respostas);
+
+        //respostasToChar(nomeArquivo);
         //addRanking();
-
+        printf("\n\nTeste\n\n");
         system("pause");
         menu();
         scanf("%d", &opcao);
@@ -97,14 +103,14 @@ int main()
         dificuldade = getchar();
 
         if(dificuldade == 'E'){
-            nomeArquivo = "perguntasfaceis.txt";
-            modificarArquivo(nomeArquivo);
+            perguntas = "perguntasfaceis.txt";
+            modificarArquivo(perguntas);
         }else if( dificuldade == 'M'){
-            nomeArquivo = "perguntasintermediarias.txt";
-            modificarArquivo(nomeArquivo);
+            perguntas = "perguntasintermediarias.txt";
+            modificarArquivo(perguntas);
         }else if(dificuldade == 'H'){
-            nomeArquivo = "perguntasdificeis.txt";
-            modificarArquivo(nomeArquivo);
+            perguntas = "perguntasdificeis.txt";
+            modificarArquivo(perguntas);
         }else{
             printf("\nIncorreto.");
         }
