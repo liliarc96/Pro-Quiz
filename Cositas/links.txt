@@ -28,3 +28,4 @@ https://stackoverflow.com/questions/34046943/reading-line-by-line-and-storing-in
 https://www.getdemocode.com/Quiz_Game.html
 https://www.quora.com/How-do-I-randomise-questions-in-C-quiz-program
 http://www.cs.utsa.edu/~wagner/CS2213/structs/structs_pass.html
+https://stackoverflow.com/questions/9653072/return-a-struct-from-a-function-in-c
