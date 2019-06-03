@@ -1,10 +1,10 @@
-| Tratamento do intestino | Alivio de Stress | Alivio da dor | Tratamento da caspa
-| Air Bag | Guidao | Selim | Corrente
-| Itamar Franco | Fernando Collor | Jose Sarney | Figueiredo
-| Trem das Onze | Mascara Negra | Chiquita Bacana | Jardineira
-| Pagao | Anao | Chorao | Cristao 
-| Femur | Tibia | Peronio | Umero
-| D. Pedro I | Hercules | Ali Baba | Dunga
-| Alexander Burr | Lee Harvey Oswald | Billy the Kid | Eliott Ness
-| Onibus | Trem | Elevador | Taxi
-| Uma fibra | Uma mucosa | Uma viscera | Um musculo
+A.Tratamento do intestino B.Alivio de Stress C.Alivio da dor D.Tratamento da caspa;
+A.Air Bag B.Guidao C.Selim D.Corrente;
+A.Itamar Franco B.Fernando Collor C.Jose Sarney D.Figueiredo;
+A.Trem das Onze B.Mascara Negra C.Chiquita Bacana D.Jardineira;
+A.Pagao B.Anao C.Chorao D.Cristao;
+A.Femur B.Tibia C.Peronio D.mero;
+A.Dom Pedro I B.Hercules C.Ali Baba D.Dunga;
+A.Alexander Burr B.Lee Harvey Oswald C.Billy the Kid D.Eliott Ness;
+A.Onibus B.Trem C.Elevador D.Taxi;
+A.Uma fibra B.Uma mucosa C.Uma viscera D.Um musculo;
