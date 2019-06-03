@@ -1,16 +1,16 @@
 #ifndef MANIPULAR_ARQUIVO_H_INCLUDED
 #define MANIPULAR_ARQUIVO_H_INCLUDED
 
-//FunÃ§Ã£o que recebe o nome do arquivo (3 opÃ§Ãµes):
+//Função que recebe o nome do arquivo (3 opções):
 int modificarArquivo(char * nArquivo){
     FILE * arquivo;
-    int i,n; //n = nÃºmero de linhas a serem adicionadas (uma linha para perguntas e uma para respostas)
+    int i,n; //n = número de linhas a serem adicionadas (uma linha para perguntas e uma para respostas)
     char str[1000];
 
     //Append:
     arquivo = fopen(nArquivo, "a");
     if(arquivo == NULL){
-       printf("\nO arquivo nÃ£o pode ser aberto...");
+       printf("\nO arquivo não pode ser aberto...");
        exit(EXIT_FAILURE);
     }else{
         for(i = 0, n = 2; i < n + 1; i++){
@@ -26,7 +26,7 @@ int modificarArquivo(char * nArquivo){
 
 
 int abrirRanking(){
-    int TAMANHO = 100000;
+    int TAMANHO = 5000;
     int totalRead = 0;
     FILE * arquivo;
     char buffer[TAMANHO];
@@ -35,7 +35,7 @@ int abrirRanking(){
     arquivo = fopen("pontuacao.txt", "r");
 
     if(arquivo == NULL){
-       printf("\nO arquivo nÃ£o pode ser aberto...");
+       printf("\nERRO");
        exit(EXIT_FAILURE);
     }else{
         while(fgets(buffer, TAMANHO , arquivo) != NULL){

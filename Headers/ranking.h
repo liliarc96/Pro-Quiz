@@ -7,7 +7,7 @@ typedef struct t_usuario{
     struct t_usuario * proximo;
 } usuario;
 
-int addRanking(){
+int mostrarRanking(){
 
     FILE * arquivo = fopen("pontuacao.txt", "r");
     if(!arquivo) return 0;
@@ -49,9 +49,9 @@ int addRanking(){
     }
     aux = lista;
 
-    printf("\nPONTUAÃ‡ÃƒO FINAL:\n\n");
+    //printf("\nPONTUAÇÃO FINAL:\n\n");
     while(aux!=0){
-        printf("%s : %d ponto(s)\n", aux->nome, aux->pontuacao);
+        //printf("%s : %d ponto(s)\n", aux->nome, aux->pontuacao);
         aux = aux->proximo;
     }
 
