@@ -1,61 +1,58 @@
 /*
-                                       -----------------------------------
-                                            Q U I Z by L√≠lia & Renata
-                                       -----------------------------------
+                                               -----------------------------------
+                                                    Q U I Z by LÌlia & Renata
+                                               -----------------------------------
 
-   --------------------------------------------------------------------------------------------------------------
-   HEADERS:
+   --------------------------------------------------------------------------------------------------------------------
+   HEADERS & SOURCES:
 
-       display.h       ==> Header com todos os textos do jogo
-   manipular_arquivo.h ==> Fun√ß√µes relacionadas a manipula√ß√£o de arquivos (abrir, fechar e modificar)
-       ranking.h       ==> Guarda as pontua√ß√µes e os nomes dos jogadores
-   --------------------------------------------------------------------------------------------------------------
+            display.c & display.h            ==> Todos os textos que aparecem no jogo
+   manipular_arquivo.c & manipular_arquivo.h ==> Tudo relacionado a manipulaÁ„o de arquivos (abrir, fechar e modificar)
+               etc.c & etc.h                 ==> FunÁıes que auxiliam no andamento do jogo
+   --------------------------------------------------------------------------------------------------------------------
 
-   --------------------------------------------------------------------------------------------------------------
-   FUN√á√ïES GLOBAIS:
+   --------------------------------------------------------------------------------------------------------------------
+   FUN«’ES GLOBAIS:
 
-    ->EM DISPLAY.H:
-        creditos(): void ==> Cr√©ditos do jogo
+    ->EM DISPLAY:
+        creditos(): void ==> CrÈditos do jogo
         guia(): void ==> Apresenta o guia do jogo
-        menu(): void ==> Estrutura do menu com suas op√ß√µes
+        menu(): void ==> Estrutura do menu com suas opÁıes
         titulo(): void ==> Nome do quiz
 
-    ->EM MANIPULAR_ARQUIVO.H:
-        abrirRanking(): int ==> Mostra o ranking salvo em pontuacao.txt
+    ->EM MANIPULAR_ARQUIVO:
+        addPontuacao(char*jogador, int pontuacao): int ==> Adiciona uma nova entrada em pontuacao.txt
         modificarTxt(char*nArquivo): int ==> Modifica o .txt das perguntas e respostas
-	addPontuaca(char*jogador,int pontuacao): int ==> Modifica o pontuacao.txt
+        mostrarRanking(): int ==> Mostra o ranking salvo em pontuacao.txt
 
-    ->EM PERGUNTAS.H:
-        geradorAleatorio(): int ==> Gera um valor aleat√≥rio e o retorna
+    ->EM ETC:
+        geradorAleatorio(): int ==> Gera um valor aleatÛrio e o retorna
+   --------------------------------------------------------------------------------------------------------------------
 
-    ->EM RANKING.H:
-        mostrarRanking(): int ==> Guarda o ranking salvo em pontuacao.txt
-   --------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------
+   VARI¡VEIS:
 
-   --------------------------------------------------------------------------------------------------------------
-   VARI√ÅVEIS:
-
-        _| NUM ==> √â usada em v√°rias outras vari√°veis para fazer compara√ß√µes, o valor √© 10 |_
+        _| NUM ==> … usada em v·rias outras vari·veis para fazer comparaÁıes, o valor original È 10 |_
 
     ->DE CONTROLE:
-        opcao: int ==> Op√ß√£o do menu
-        repeticao: int ==> default = 1; Continua a exibir o menu ap√≥s sair da op√ß√£o escolhida
-        randomico: unsigned int ==> N√∫mero  que recebe valor da fun√ß√£o geradorAleatorio(): int
-    |NUM| arr: bool ==> Inicia com NUM zeros, o n√∫mero escolhido modifica para 1 para n√£o ser escolhido novamente
+        opcao: int ==> OpÁ„o do menu
+        repeticao: int ==> default = 1; Continua a exibir o menu apÛs sair da opÁ„o escolhida
+        randomico: unsigned int ==> N˙mero  que recebe valor da funÁ„o geradorAleatorio(): int
+    |NUM| arr: bool ==> Inicia com NUM zeros, o n˙mero escolhido modifica para 1 para n„o ser escolhido novamente
 
     ->DE PERGUNTAS & RESPOSTAS:
     |NUM| perguntas: char ==> Perguntas retiradas do arquivo 'perguntas(faceis/intermediarias/dificeis).txt'
     |NUM| respostas: char ==> Respostas retiradas do arquivo 'respostas(faceis/intermediarias/dificeis).txt'
-    |NUM| corretasFaceis: char ==> As op√ß√µes corretas das perguntas f√°ceis, respectivamente
-    |NUM| corretasIntermediarias: char ==> As op√ß√µes corretas das perguntas intermedi√°rias, respectivamente
-    |NUM| corretasDificeis: char ==> As op√ß√µes corretas das perguntas dif√≠ceis, respectivamente
-    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do n√≠vel
+    |NUM| corretasFaceis: char ==> As opÁıes corretas das perguntas f·ceis, respectivamente
+    |NUM| corretasIntermediarias: char ==> As opÁıes corretas das perguntas intermedi·rias, respectivamente
+    |NUM| corretasDificeis: char ==> As opÁıes corretas das perguntas difÌceis, respectivamente
+    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do nÌvel
 
     ->DE JOGADOR:
         nomeJogador: char ==> Nome do jogador
-        pontuacao: int ==> Pontua√ß√£o do jogador
+        pontuacao: int ==> PontuaÁ„o do jogador
         pular: int ==> Quantidade de pulos que o jogador ainda tem
-   --------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,25 +66,21 @@
 
 #include "manipular_arquivo.h"
 #include "display.h"
-#include "ranking.h"
-#include "perguntas.h"
+#include "etc.h"
 
 int main(){
-    /*
-    INICIALIZA√á√ÉO DE VARI√ÅVEIS
-    */
     int opcao, repeticao = 1, i;
     //MATRIZ DAS PERGUNTAS:
     char perguntas[NUM][1000];
     //MATRIZ DAS RESPOSTAS:
     char respostas[NUM][1000];
-    //COMPARA√á√ÉO DAS RESPOSTAS CERTAS:
+    //COMPARA«√O DAS RESPOSTAS CERTAS:
     char corretasFaceis[NUM] = {'B','B','C','C','B','B','B','B','D','D'};
     char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
     char corretasDificeis[NUM] = {'A','B','B','D','B','A','B','B','C','A'};
-    //VARI√ÅVEL QUE RECEBE UM N√öMERO ALEAT√ìRIO E ALINHA PERGUNTAS & RESPOSTAS:
+    //VARI¡VEL QUE RECEBE UM N⁄MERO ALEAT”RIO E ALINHA PERGUNTAS & RESPOSTAS:
     unsigned int randomico;
-    //CHECA SE O N√öMERO J√Å FOI ESCOLHIDO
+    //CHECA SE O N⁄MERO J¡ FOI ESCOLHIDO
     bool arr[NUM] = {0};
     //DADOS DO JOGADOR:
     char nomeJogador[100];
@@ -98,14 +91,8 @@ int main(){
     char alternativa;
     //QUANTIDADE DE PULOS RESTANTES:
     int pular = 5;
-
-    //VARI√ÅVEL PARA TESTE!!!!!!
     int questoes = 1;
 
-
-    /*
-    INICIALIZANDO A DIFICULDADE F√ÅCIL
-    */
     FILE * arquivo;
 
     arquivo = fopen("perguntasfaceis.txt", "r");
@@ -118,13 +105,6 @@ int main(){
 
     system("color 0A");
     titulo();
-    system("pause");
-    system("cls");
-
-    /*
-    MENU
-    */
-
     menu();
 
     scanf("%d", &opcao);
@@ -286,13 +266,17 @@ int main(){
 				}
 
                 addPontuacao(nomeJogador,pontuacao);
+                mostrarRanking();
+                printf("\n\n");
+                system("pause");
+                system("cls");
 
                 menu();
                 scanf("%d", &opcao);
                 system("cls");
                 break;
               case 2:
-                abrirRanking();
+                mostrarRanking();
                 system("pause");
                 system("cls");
                 menu();
