@@ -31,19 +31,24 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="display.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="display.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="etc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="etc.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="manipular_arquivo.h" />
-		<Unit filename="perguntas.h" />
 		<Unit filename="perguntasdificeis.txt" />
 		<Unit filename="perguntasfaceis.txt" />
 		<Unit filename="perguntasintermediarias.txt" />
 		<Unit filename="pontuacao.txt" />
-		<Unit filename="ranking.h" />
 		<Unit filename="respostasdificeis.txt" />
 		<Unit filename="respostasfaceis.txt" />
 		<Unit filename="respostasintermediarias.txt" />
