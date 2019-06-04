@@ -1,58 +1,58 @@
 /*
                                        -----------------------------------
-                                            Q U I Z by L√≠lia & Renata
+                                            Q U I Z by LÌlia & Renata
                                        -----------------------------------
 
    --------------------------------------------------------------------------------------------------------------
    HEADERS:
 
        display.h       ==> Header com todos os textos do jogo
-   manipular_arquivo.h ==> Fun√ß√µes relacionadas a manipula√ß√£o de arquivos (abrir, fechar e modificar)
-       ranking.h       ==> Guarda as pontua√ß√µes e os nomes dos jogadores
+   manipular_arquivo.h ==> FunÁıes relacionadas a manipulaÁ„o de arquivos (abrir, fechar e modificar)
+       ranking.h       ==> Guarda as pontuaÁıes e os nomes dos jogadores
    --------------------------------------------------------------------------------------------------------------
 
    --------------------------------------------------------------------------------------------------------------
-   FUN√á√ïES GLOBAIS:
+   FUN«’ES GLOBAIS:
 
     ->EM DISPLAY.H:
-        creditos(): void ==> Cr√©ditos do jogo
+        creditos(): void ==> CrÈditos do jogo
         guia(): void ==> Apresenta o guia do jogo
-        menu(): void ==> Estrutura do menu com suas op√ß√µes
+        menu(): void ==> Estrutura do menu com suas opÁıes
         titulo(): void ==> Nome do quiz
 
     ->EM MANIPULAR_ARQUIVO.H:
         abrirRanking(): int ==> Mostra o ranking salvo em pontuacao.txt
-        modificarArquivo(char*nArquivo): int ==> Modifica o arquivo escolhido
+        modificarTxt(char*nArquivo): int ==> Modifica o .txt das perguntas e respostas
 
     ->EM PERGUNTAS.H:
-        geradorAleatorio(): int ==> Gera um valor aleat√≥rio e o retorna
+        geradorAleatorio(): int ==> Gera um valor aleatÛrio e o retorna
 
     ->EM RANKING.H:
         mostrarRanking(): int ==> Guarda o ranking salvo em pontuacao.txt
    --------------------------------------------------------------------------------------------------------------
 
    --------------------------------------------------------------------------------------------------------------
-   VARI√ÅVEIS:
+   VARI¡VEIS:
 
-        _| NUM ==> √â usada em v√°rias outras vari√°veis para fazer compara√ß√µes, o valor √© 10 |_
+        _| NUM ==> … usada em v·rias outras vari·veis para fazer comparaÁıes, o valor È 10 |_
 
     ->DE CONTROLE:
-        opcao: int ==> Op√ß√£o do menu
-        repeticao: int ==> default = 1; Continua a exibir o menu ap√≥s sair da op√ß√£o escolhida
-        randomico: unsigned int ==> N√∫mero  que recebe valor da fun√ß√£o geradorAleatorio(): int
-    |NUM| arr: bool ==> Inicia com NUM zeros, o n√∫mero escolhido modifica para 1 para n√£o ser escolhido novamente
+        opcao: int ==> OpÁ„o do menu
+        repeticao: int ==> default = 1; Continua a exibir o menu apÛs sair da opÁ„o escolhida
+        randomico: unsigned int ==> N˙mero  que recebe valor da funÁ„o geradorAleatorio(): int
+    |NUM| arr: bool ==> Inicia com NUM zeros, o n˙mero escolhido modifica para 1 para n„o ser escolhido novamente
 
     ->DE PERGUNTAS & RESPOSTAS:
     |NUM| perguntas: char ==> Perguntas retiradas do arquivo 'perguntas(faceis/intermediarias/dificeis).txt'
     |NUM| respostas: char ==> Respostas retiradas do arquivo 'respostas(faceis/intermediarias/dificeis).txt'
-    |NUM| corretasFaceis: char ==> As op√ß√µes corretas das perguntas f√°ceis, respectivamente
-    |NUM| corretasIntermediarias: char ==> As op√ß√µes corretas das perguntas intermedi√°rias, respectivamente
-    |NUM| corretasDificeis: char ==> As op√ß√µes corretas das perguntas dif√≠ceis, respectivamente
-    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do n√≠vel
+    |NUM| corretasFaceis: char ==> As opÁıes corretas das perguntas f·ceis, respectivamente
+    |NUM| corretasIntermediarias: char ==> As opÁıes corretas das perguntas intermedi·rias, respectivamente
+    |NUM| corretasDificeis: char ==> As opÁıes corretas das perguntas difÌceis, respectivamente
+    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do nÌvel
 
     ->DE JOGADOR:
         nomeJogador: char ==> Nome do jogador
-        pontuacao: int ==> Pontua√ß√£o do jogador
+        pontuacao: int ==> PontuaÁ„o do jogador
         pular: int ==> Quantidade de pulos que o jogador ainda tem
    --------------------------------------------------------------------------------------------------------------
 */
@@ -71,39 +71,39 @@
 #include "ranking.h"
 #include "perguntas.h"
 
-int main()
-{
+int main(){
     /*
-    INICIALIZA√á√ÉO DE VARI√ÅVEIS
+    INICIALIZA«√O DE VARI¡VEIS
     */
     int opcao, repeticao = 1, i;
     //MATRIZ DAS PERGUNTAS:
     char perguntas[NUM][1000];
     //MATRIZ DAS RESPOSTAS:
     char respostas[NUM][1000];
-    //COMPARA√á√ÉO DAS RESPOSTAS CERTAS:
+    //COMPARA«√O DAS RESPOSTAS CERTAS:
     char corretasFaceis[NUM] = {'B','B','C','C','B','B','B','B','D','D'};
-    char corretasIntermediarias[NUM] = {'A','D','B','B','B','C','A','D','C','A'};
-    char corretasDificeis[NUM] = {'A','B','A','C','A','C','D','B','A','D'};
-    //VARI√ÅVEL QUE RECEBE UM N√öMERO ALEAT√ìRIO E ALINHA PERGUNTAS & RESPOSTAS:
+    char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
+    char corretasDificeis[NUM] = {'A','B','B','D','B','A','B','B','C','A'};
+    //VARI¡VEL QUE RECEBE UM N⁄MERO ALEAT”RIO E ALINHA PERGUNTAS & RESPOSTAS:
     unsigned int randomico;
-    //CHECA SE O N√öMERO J√Å FOI ESCOLHIDO
+    //CHECA SE O N⁄MERO J¡ FOI ESCOLHIDO
     bool arr[NUM] = {0};
     //DADOS DO JOGADOR:
-    char * nomeJogador[100];
-    int pontuacao = 0;
+    char nomeJogador[100];
+    int pontuacao;
     int acertos;
+    int erros;
     int resta = NUM;
     char alternativa;
     //QUANTIDADE DE PULOS RESTANTES:
     int pular = 5;
 
-    //VARI√ÅVEL PARA TESTE!!!!!!
+    //VARI¡VEL PARA TESTE!!!!!!
     int questoes = 1;
 
 
     /*
-    INICIALIZANDO A DIFICULDADE F√ÅCIL
+    INICIALIZANDO A DIFICULDADE F¡CIL
     */
     FILE * arquivo;
 
@@ -115,6 +115,7 @@ int main()
     for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
     fclose(arquivo);
 
+    system("color 0A");
     titulo();
     system("pause");
     system("cls");
@@ -130,7 +131,7 @@ int main()
 
     while(repeticao == 1){
         switch(opcao){
-            case 1:
+                case 1:
                 printf("Insira o nome do jogador:\n"
                        "> ");
                 scanf("%s", nomeJogador);
@@ -138,14 +139,13 @@ int main()
                 guia();
                 system("pause");
                 system("cls");
-                /*
-                COME√áANDO O JOGO
-                */
+
                 for(acertos = 0;resta > 0;){
                     randomico = geradorAleatorio();
                     if(!arr[randomico]){
-                        printf("PERGUNTA %d:\n", questoes);
-                        printf("%s\n", perguntas[randomico]);
+                        printf("\nPERGUNTA %d:\n", questoes);
+                        printf("> "
+                               "%s\n", perguntas[randomico]);
                         printf("%s\n\n", respostas[randomico]);
                         printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
                                "> ");
@@ -153,31 +153,142 @@ int main()
                         alternativa = getchar();
                         if(alternativa == corretasFaceis[randomico]){
                             acertos++;
-                            printf("ACERTOU!\n");
+                            printf("\nACERTOU!\n\n");
                         }else if((alternativa == 'P') && (pular > 0)){
                             pular--;
-                            printf("PULOU! %s tem %d pulos restantes!\n", nomeJogador, pular);
+                            printf("PULOU! %s tem %d pulos restantes!\n\n", nomeJogador, pular);
                         }else{
-                            printf("ERROU!\n");
+                            printf("ERROU!\n\n");
                         }
                         arr[randomico] = 1;
                         resta--;
                         questoes++;
                         system("pause");
                         system("cls");
-                    }else{
-                        arr[randomico] = 1;
                     }
                 }
-                //MOSTRA A TELA COM A PONTUA√á√ÉO OBTIDA NO N√çVEL E SE TEVE GAME OVER OU N√ÉO
+                system("cls");
+
+                pontuacao = acertos * 10;
+                printf("%s, teve %d acertos nesse nivel e obteve uma pontuacao de %d!", nomeJogador, acertos, pontuacao);
+                if(acertos < 5){
+                    printf("\n\nGAME OVER!\n\n");
+                    system("pause");
+                    system("cls");
+                }
+				else{
+                  printf("\n\nParabains, voce completou o nivel FACIL!\n\n");
+
+                  system("pause");
+                  system("cls");
+                  arquivo = fopen("perguntasintermediarias.txt", "r");
+                  for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
+                  fclose(arquivo);
+
+                  arquivo = fopen("respostasintermediarias.txt", "r");
+                  for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
+                  fclose(arquivo);
+
+                  for(acertos = erros = 0,resta = NUM,questoes = 1;resta > 0;){
+                      randomico = geradorAleatorio();
+                      if(!arr[randomico]){
+                          printf("\nPERGUNTA %d:\n\n", questoes);
+                          printf("> "
+                                 "%s\n", perguntas[randomico]);
+                          printf("%s\n\n", respostas[randomico]);
+                          printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
+                                 "> ");
+                          fflush(stdin);
+                          alternativa = getchar();
+                          if(alternativa == corretasIntermediarias[randomico]){
+                              acertos++;
+                              printf("ACERTOU!\n\n");
+                          }else if((alternativa == 'P') && (pular > 0)){
+                              pular--;
+                              printf("PULOU! %s tem %d pulos restantes!\n", nomeJogador, pular);
+                          }else{
+                              erros++;
+                              printf("ERROU!\n\n");
+                          }
+                          arr[randomico] = 1;
+                          resta--;
+                          questoes++;
+                          system("pause");
+                          system("cls");
+                      }
+                  }
+                  system("cls");
+
+                  pontuacao += ((acertos * 30)-(erros * 10));
+                  printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao de %d!", nomeJogador, acertos, erros, pontuacao);
+                  if(acertos < 6){
+                      printf("\n\nGAME OVER!\n\n");
+                      system("pause");
+                      system("cls");
+                  }
+				  else{
+                    printf("\n\nParabains, voce completou o nivel INTERMEDIARIO!\n\n");
+
+                    system("pause");
+                    system("cls");
+                    arquivo = fopen("perguntasdificeis.txt", "r");
+                    for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
+
+                    arquivo = fopen("respostasdificeis.txt", "r");
+                    for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
+
+                    for(i = 0;i < NUM;i++){
+                      arr[i] = 0;
+                    }
+
+                    for(acertos = erros = 0,resta = NUM,questoes = 1;resta > 0;){
+                        randomico = geradorAleatorio();
+                        if(!arr[randomico]){
+                            printf("\nPERGUNTA %d:\n\n", questoes);
+                            printf("> "
+                                   "%s\n", perguntas[randomico]);
+                            printf("%s\n\n", respostas[randomico]);
+                            printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
+                                   "> ");
+                            fflush(stdin);
+                            alternativa = getchar();
+                            if(alternativa == corretasDificeis[randomico]){
+                                acertos++;
+                                printf("\nACERTOU!\n\n");
+                            }else if((alternativa == 'P') && (pular > 0)){
+                                pular--;
+                                printf("PULOU! %s tem %d pulos restantes!\n", nomeJogador, pular);
+                            }else{
+                                erros++;
+                                printf("ERROU!\n\n");
+                            }
+                            arr[randomico] = 1;
+                            resta--;
+                            questoes++;
+                            system("pause");
+                            system("cls");
+                        }else{
+                            arr[randomico] = 1;
+                        }
+                    }
+                    //MOSTRA A TELA COM A PONTUA«√O OBTIDA NO NÕVEL E SE TEVE GAME OVER OU N√O
+                    system("cls");
+
+                    pontuacao += ((acertos * 50)-(erros * 20));
+                    printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao final de %d!", nomeJogador, acertos, erros, pontuacao);
+				 }
+				}
+
+                addPontuacao(nomeJogador,pontuacao);
+
                 menu();
                 scanf("%d", &opcao);
                 system("cls");
                 break;
               case 2:
                 abrirRanking();
-                printf("\n");
-
                 system("pause");
                 system("cls");
                 menu();
@@ -190,9 +301,6 @@ int main()
                 system("cls");
                 break;
               case 4:
-                /*
-                CR√âDITOS
-                */
                 creditos();
                 system("pause");
                 menu();
@@ -209,7 +317,7 @@ int main()
                 menu();
                 scanf("%d", &opcao);
                 break;
+        }
     }
-  }
     return 0;
 }
