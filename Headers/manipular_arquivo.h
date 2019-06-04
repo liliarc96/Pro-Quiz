@@ -18,31 +18,70 @@ int modificarTxt(char * nArquivo){
     return 0;
 }
 
+typedef struct t_usuario{
+    char nome [100];
+    unsigned int pontuacao;
+    struct t_usuario * proximo;
+} usuario;
 
+int mostrarRanking(){
 
-int abrirRanking(){
-    int TAMANHO = 5000;
-    int totalRead = 0;
-    FILE * arquivo;
-    char buffer[TAMANHO];
+    FILE * arquivo = fopen("pontuacao.txt", "r");
+    if(!arquivo) return 0;
 
-    //Abre arquivo:
-    arquivo = fopen("pontuacao.txt", "r");
+    //auxiliar para leitura:
+    usuario * lista;
 
-    if(arquivo == NULL){
-       printf("\nERRO");
-       exit(EXIT_FAILURE);
-    }else{
-        while(fgets(buffer, TAMANHO , arquivo) != NULL){
-            totalRead = strlen(buffer);
+    char linha[150];
+    if(fgets(linha, 150, arquivo)==0) return 0;
+    //printf("Lido: %s", linha);
+    char * nome = strtok(linha, ":");
+    char * str_pontuacao = strtok(0,":");
+    usuario * usr1 = (usuario *) malloc(sizeof(usuario));
+    if(!usr1) return 0;
+    strcpy(usr1->nome, nome);
+    usr1->pontuacao = atoi(str_pontuacao);
+    usr1->proximo = 0;
+    lista = usr1;
+    usuario * aux = lista;
 
-            buffer[totalRead - 1] = buffer[totalRead - 1] == '\n' ? '\0' : buffer[totalRead - 1];
+    while(fgets(linha, 150, arquivo)!=0){
 
-            printf("%s\n", buffer);
-        }
+        nome = strtok(linha, ":");
+        str_pontuacao = strtok(0,":");
+        //novo usuario:
+        usuario * novo = (usuario *) malloc(sizeof(usuario));
+        if(!novo) return 0;
+        strcpy(novo->nome, nome);
+        novo->pontuacao = atoi(str_pontuacao);
+        novo->proximo = 0;
+
+        aux->proximo = novo;
+        aux = aux->proximo;
+    }
+    aux = lista;
+
+    printf("\nRANKING FINAL:\n\n");
+    while(aux!=0){
+        printf("%s : %d ponto(s)\n", aux->nome, aux->pontuacao);
+        aux = aux->proximo;
     }
 
-    //Fechar arquivo:
+
+    free(usr1);
+    fclose(arquivo);
+    return 0;
+}
+
+int addPontuacao(char * jogador, int pontuacao){
+    FILE * arquivo;
+    arquivo = fopen("pontuacao.txt", "a");
+    if(!arquivo){
+       printf("\nO arquivo não pode ser aberto...");
+       return 0;
+    }
+    fprintf(arquivo, "%s: ", jogador);
+    fprintf(arquivo, "%d", pontuacao);
     fclose(arquivo);
     return 0;
 }
