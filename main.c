@@ -190,6 +190,10 @@ int main(){
                   for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
                   fclose(arquivo);
 
+                  for(i = 0;i < NUM;i++){
+                    arr[i] = 0;
+                  }
+
                   for(acertos = erros = 0,resta = NUM,questoes = 1;resta > 0;){
                       randomico = geradorAleatorio();
                       if(!arr[randomico]){
