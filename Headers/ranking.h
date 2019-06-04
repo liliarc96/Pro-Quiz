@@ -42,10 +42,8 @@ int mostrarRanking(){
         novo->pontuacao = atoi(str_pontuacao);
         novo->proximo = 0;
 
-        //adicionar na lista:
         aux->proximo = novo;
         aux = aux->proximo;
-        //printf("Usuario: %s, pontuacao: %d\n", nome, pontuacao);
     }
     aux = lista;
 
@@ -57,6 +55,15 @@ int mostrarRanking(){
 
 
     free(usr1);
+    fclose(arquivo);
+    return 0;
+}
+
+int addPontuacao(char * jogador, int pontuacao){
+    FILE * arquivo;
+    arquivo = fopen("pontuacao.txt", "a");
+    fprintf(arquivo, "%s: ", jogador);
+    fprintf(arquivo, "%d", pontuacao);
     fclose(arquivo);
     return 0;
 }

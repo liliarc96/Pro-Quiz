@@ -1,10 +1,8 @@
 #ifndef MANIPULAR_ARQUIVO_H_INCLUDED
 #define MANIPULAR_ARQUIVO_H_INCLUDED
 
-//Função que recebe o nome do arquivo (3 opções):
-int modificarArquivo(char * nArquivo){
+int modificarTxt(char * nArquivo){
     FILE * arquivo;
-    int i,n; //n = número de linhas a serem adicionadas (uma linha para perguntas e uma para respostas)
     char str[1000];
 
     //Append:
@@ -12,15 +10,12 @@ int modificarArquivo(char * nArquivo){
     if(arquivo == NULL){
        printf("\nO arquivo não pode ser aberto...");
        exit(EXIT_FAILURE);
-    }else{
-        for(i = 0, n = 2; i < n + 1; i++){
-            fgets(str, sizeof str, stdin);
-            fputs(str, arquivo);
-        }
-    //Fechar arquivo:
+    }
+    fgets(str, sizeof str, stdin);
+    fputs(str, arquivo);
+
     fclose(arquivo);
     return 0;
-    }
 }
 
 
