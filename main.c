@@ -1,58 +1,59 @@
 /*
                                        -----------------------------------
-                                            Q U I Z by LÌlia & Renata
+                                            Q U I Z by L√≠lia & Renata
                                        -----------------------------------
 
    --------------------------------------------------------------------------------------------------------------
    HEADERS:
 
        display.h       ==> Header com todos os textos do jogo
-   manipular_arquivo.h ==> FunÁıes relacionadas a manipulaÁ„o de arquivos (abrir, fechar e modificar)
-       ranking.h       ==> Guarda as pontuaÁıes e os nomes dos jogadores
+   manipular_arquivo.h ==> Fun√ß√µes relacionadas a manipula√ß√£o de arquivos (abrir, fechar e modificar)
+       ranking.h       ==> Guarda as pontua√ß√µes e os nomes dos jogadores
    --------------------------------------------------------------------------------------------------------------
 
    --------------------------------------------------------------------------------------------------------------
-   FUN«’ES GLOBAIS:
+   FUN√á√ïES GLOBAIS:
 
     ->EM DISPLAY.H:
-        creditos(): void ==> CrÈditos do jogo
+        creditos(): void ==> Cr√©ditos do jogo
         guia(): void ==> Apresenta o guia do jogo
-        menu(): void ==> Estrutura do menu com suas opÁıes
+        menu(): void ==> Estrutura do menu com suas op√ß√µes
         titulo(): void ==> Nome do quiz
 
     ->EM MANIPULAR_ARQUIVO.H:
         abrirRanking(): int ==> Mostra o ranking salvo em pontuacao.txt
         modificarTxt(char*nArquivo): int ==> Modifica o .txt das perguntas e respostas
+	addPontuaca(char*jogador,int pontuacao): int ==> Modifica o pontuacao.txt
 
     ->EM PERGUNTAS.H:
-        geradorAleatorio(): int ==> Gera um valor aleatÛrio e o retorna
+        geradorAleatorio(): int ==> Gera um valor aleat√≥rio e o retorna
 
     ->EM RANKING.H:
         mostrarRanking(): int ==> Guarda o ranking salvo em pontuacao.txt
    --------------------------------------------------------------------------------------------------------------
 
    --------------------------------------------------------------------------------------------------------------
-   VARI¡VEIS:
+   VARI√ÅVEIS:
 
-        _| NUM ==> … usada em v·rias outras vari·veis para fazer comparaÁıes, o valor È 10 |_
+        _| NUM ==> √â usada em v√°rias outras vari√°veis para fazer compara√ß√µes, o valor √© 10 |_
 
     ->DE CONTROLE:
-        opcao: int ==> OpÁ„o do menu
-        repeticao: int ==> default = 1; Continua a exibir o menu apÛs sair da opÁ„o escolhida
-        randomico: unsigned int ==> N˙mero  que recebe valor da funÁ„o geradorAleatorio(): int
-    |NUM| arr: bool ==> Inicia com NUM zeros, o n˙mero escolhido modifica para 1 para n„o ser escolhido novamente
+        opcao: int ==> Op√ß√£o do menu
+        repeticao: int ==> default = 1; Continua a exibir o menu ap√≥s sair da op√ß√£o escolhida
+        randomico: unsigned int ==> N√∫mero  que recebe valor da fun√ß√£o geradorAleatorio(): int
+    |NUM| arr: bool ==> Inicia com NUM zeros, o n√∫mero escolhido modifica para 1 para n√£o ser escolhido novamente
 
     ->DE PERGUNTAS & RESPOSTAS:
     |NUM| perguntas: char ==> Perguntas retiradas do arquivo 'perguntas(faceis/intermediarias/dificeis).txt'
     |NUM| respostas: char ==> Respostas retiradas do arquivo 'respostas(faceis/intermediarias/dificeis).txt'
-    |NUM| corretasFaceis: char ==> As opÁıes corretas das perguntas f·ceis, respectivamente
-    |NUM| corretasIntermediarias: char ==> As opÁıes corretas das perguntas intermedi·rias, respectivamente
-    |NUM| corretasDificeis: char ==> As opÁıes corretas das perguntas difÌceis, respectivamente
-    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do nÌvel
+    |NUM| corretasFaceis: char ==> As op√ß√µes corretas das perguntas f√°ceis, respectivamente
+    |NUM| corretasIntermediarias: char ==> As op√ß√µes corretas das perguntas intermedi√°rias, respectivamente
+    |NUM| corretasDificeis: char ==> As op√ß√µes corretas das perguntas dif√≠ceis, respectivamente
+    |NUM| resta: int ==> Resta(m) ... pergunta(s) para o fim do n√≠vel
 
     ->DE JOGADOR:
         nomeJogador: char ==> Nome do jogador
-        pontuacao: int ==> PontuaÁ„o do jogador
+        pontuacao: int ==> Pontua√ß√£o do jogador
         pular: int ==> Quantidade de pulos que o jogador ainda tem
    --------------------------------------------------------------------------------------------------------------
 */
@@ -73,20 +74,20 @@
 
 int main(){
     /*
-    INICIALIZA«√O DE VARI¡VEIS
+    INICIALIZA√á√ÉO DE VARI√ÅVEIS
     */
     int opcao, repeticao = 1, i;
     //MATRIZ DAS PERGUNTAS:
     char perguntas[NUM][1000];
     //MATRIZ DAS RESPOSTAS:
     char respostas[NUM][1000];
-    //COMPARA«√O DAS RESPOSTAS CERTAS:
+    //COMPARA√á√ÉO DAS RESPOSTAS CERTAS:
     char corretasFaceis[NUM] = {'B','B','C','C','B','B','B','B','D','D'};
     char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
     char corretasDificeis[NUM] = {'A','B','B','D','B','A','B','B','C','A'};
-    //VARI¡VEL QUE RECEBE UM N⁄MERO ALEAT”RIO E ALINHA PERGUNTAS & RESPOSTAS:
+    //VARI√ÅVEL QUE RECEBE UM N√öMERO ALEAT√ìRIO E ALINHA PERGUNTAS & RESPOSTAS:
     unsigned int randomico;
-    //CHECA SE O N⁄MERO J¡ FOI ESCOLHIDO
+    //CHECA SE O N√öMERO J√Å FOI ESCOLHIDO
     bool arr[NUM] = {0};
     //DADOS DO JOGADOR:
     char nomeJogador[100];
@@ -98,12 +99,12 @@ int main(){
     //QUANTIDADE DE PULOS RESTANTES:
     int pular = 5;
 
-    //VARI¡VEL PARA TESTE!!!!!!
+    //VARI√ÅVEL PARA TESTE!!!!!!
     int questoes = 1;
 
 
     /*
-    INICIALIZANDO A DIFICULDADE F¡CIL
+    INICIALIZANDO A DIFICULDADE F√ÅCIL
     */
     FILE * arquivo;
 
@@ -273,7 +274,6 @@ int main(){
                             arr[randomico] = 1;
                         }
                     }
-                    //MOSTRA A TELA COM A PONTUA«√O OBTIDA NO NÕVEL E SE TEVE GAME OVER OU N√O
                     system("cls");
 
                     pontuacao += ((acertos * 50)-(erros * 20));
