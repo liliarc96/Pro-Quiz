@@ -1,22 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
-#include <stdbool.h>
 #include <string.h>
-#include <ctype.h>
-#include <time.h>
 
 #include "manipular_arquivo.h"
-
-typedef struct t_usuario{
-    char nome [100];
-    unsigned int pontuacao;
-    struct t_usuario * proximo;
-} usuario;
-
-int modificarTxt(char*nArquivo);
-int mostrarRanking();
-int addPontuacao(char * jogador, int pontuacao);
 
 int modificarTxt(char * nArquivo){
     FILE * arquivo;
@@ -72,7 +58,7 @@ int mostrarRanking(){
     }
     aux = lista;
 
-    printf("\nPONTUAÇÃO FINAL:\n\n");
+    printf("\nRANKING FINAL:\n\n");
     while(aux!=0){
         printf("%s : %d ponto(s)\n", aux->nome, aux->pontuacao);
         aux = aux->proximo;
@@ -87,8 +73,12 @@ int mostrarRanking(){
 int addPontuacao(char * jogador, int pontuacao){
     FILE * arquivo;
     arquivo = fopen("pontuacao.txt", "a");
+    if(!arquivo){
+       printf("\nO arquivo não pode ser aberto...");
+       return 0;
+    }
     fprintf(arquivo, "%s: ", jogador);
-    fprintf(arquivo, "%d", pontuacao);
+    fprintf(arquivo, "%d\n", pontuacao);
     fclose(arquivo);
     return 0;
 }

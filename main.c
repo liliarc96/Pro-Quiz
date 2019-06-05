@@ -56,11 +56,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <stdbool.h>
-#include <string.h>
-#include <ctype.h>
-#include <time.h>
 
 #define NUM 10
 
@@ -70,28 +66,27 @@
 
 int main(){
     int opcao, repeticao = 1, i;
-    //MATRIZ DAS PERGUNTAS:
+
     char perguntas[NUM][1000];
-    //MATRIZ DAS RESPOSTAS:
     char respostas[NUM][1000];
-    //COMPARAÇÃO DAS RESPOSTAS CERTAS:
+    int resta = NUM;
+    char alternativa;
+
     char corretasFaceis[NUM] = {'B','B','C','C','B','B','B','B','D','D'};
     char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
-    char corretasDificeis[NUM] = {'A','B','B','D','B','A','B','B','C','A'};
-    //VARIÁVEL QUE RECEBE UM NÚMERO ALEATÓRIO E ALINHA PERGUNTAS & RESPOSTAS:
-    unsigned int randomico;
-    //CHECA SE O NÚMERO JÁ FOI ESCOLHIDO
+    char corretasDificeis[NUM] = {'B','B','B','D','B','A','B','B','C','A'};
+
+    int randomico;
     bool arr[NUM] = {0};
-    //DADOS DO JOGADOR:
-    char nomeJogador[100];
+
+    char nomeJogador[200];
     int pontuacao;
     int acertos;
     int erros;
-    int resta = NUM;
-    char alternativa;
-    //QUANTIDADE DE PULOS RESTANTES:
+
     int pular = 5;
     int questoes = 1;
+
 
     FILE * arquivo;
 
@@ -153,7 +148,7 @@ int main(){
                 pontuacao = acertos * 10;
                 printf("%s, teve %d acertos nesse nivel e obteve uma pontuacao de %d!", nomeJogador, acertos, pontuacao);
                 if(acertos < 5){
-                    printf("\n\nGAME OVER!\n\n");
+                    gameOver();
                     system("pause");
                     system("cls");
                 }
@@ -207,7 +202,7 @@ int main(){
                   pontuacao += ((acertos * 30)-(erros * 10));
                   printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao de %d!", nomeJogador, acertos, erros, pontuacao);
                   if(acertos < 6){
-                      printf("\n\nGAME OVER!\n\n");
+                      gameOver();
                       system("pause");
                       system("cls");
                   }
@@ -266,19 +261,24 @@ int main(){
 				}
 
                 addPontuacao(nomeJogador,pontuacao);
+
                 mostrarRanking();
                 printf("\n\n");
                 system("pause");
                 system("cls");
 
+                titulo();
                 menu();
                 scanf("%d", &opcao);
                 system("cls");
                 break;
               case 2:
                 mostrarRanking();
+                printf("\n");
                 system("pause");
                 system("cls");
+
+                titulo();
                 menu();
                 scanf("%d", &opcao);
                 system("cls");

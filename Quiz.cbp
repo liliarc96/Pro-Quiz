@@ -44,6 +44,9 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="manipular_arquivo.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="manipular_arquivo.h" />
 		<Unit filename="perguntasdificeis.txt" />
 		<Unit filename="perguntasfaceis.txt" />
