@@ -5,5 +5,6 @@ void titulo();
 void guia();
 void menu();
 void creditos();
+void gameOver();
 
 #endif // DISPLAY_H_INCLUDED
