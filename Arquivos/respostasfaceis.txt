@@ -1,10 +1,10 @@
-A.50   B.100   C.2500   D.60
-A.Caju   B.Abobora   C.Chuchu   D.Coco
-A.Joaozinho Trinta   B.Zeca Pagodinho   C.Chiquinho Scarpa   D.Chico Buarque
-A.Joana D'arc   B.Anita Garibaldi   C.Princeza Isabel   D.Imperatriz Leopoldina
-A.Londres   B.Nova Iorque   C.Madrid   D.Paris
-A.Folhas caidas   B.Leite derramado   C.Doce queimado   D.Pao velho
-A.Robo   B.Marionete   C.Androide   D.Manequim
-A.Esconde-esconde   B.Bingo   C.Banco Imobiliario   D.Xadrez
-A.Robin Hood   B.Simbad   C.Indiana Jones   D.Zorro
-A.Licor   B.Doce   C.Tempero   D.Pao
+A)50   B)100   C)2500   D)60
+A)Caju   B)Abobora   C)Chuchu   D)Coco
+A)Joaozinho Trinta   B)Zeca Pagodinho   C)Chiquinho Scarpa   D)Chico Buarque
+A)Joana D'arc   B)Anita Garibaldi   C)Princeza Isabel   D)Imperatriz Leopoldina
+A)Londres   B)Nova Iorque   C)Madrid   D)Paris
+A)Folhas caidas   B)Leite derramado   C)Doce queimado   D)Pao velho
+A)Robo   B)Marionete   C)Androide   D)Manequim
+A)Esconde-esconde   B)Bingo   C)Banco Imobiliario   D)Xadrez
+A)Robin Hood   B)Simbad   C)Indiana Jones   D)Zorro
+A)Licor   B)Doce   C)Tempero   D)Pao

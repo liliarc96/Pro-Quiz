@@ -1,3 +1,5 @@
-Fulana: 100
-Sicrana: 43
-Beltrana: 27
+Teste1: 400
+Teste2: 150
+Teste3: 0
+Cicrana: 110
+Clotiudes: 40
