@@ -4,23 +4,19 @@
 
 #include "manipular_arquivo.h"
 
-int modificarTxt(char * nArquivo);
+int modificarTxt(char * nArquivo, char * txt);
 int mostrarRanking();
 int addPontuacao(char * jogador, int pontuacao);
 
-int modificarTxt(char * nArquivo){
+int modificarTxt(char * nArquivo, char *txt){
     FILE * arquivo;
-    char str[1000];
 
-    //Append:
     arquivo = fopen(nArquivo, "a");
     if(arquivo == NULL){
        printf("\nO arquivo não pode ser aberto...");
        exit(EXIT_FAILURE);
     }
-    fgets(str, sizeof str, stdin);
-    fputs(str, arquivo);
-
+    fprintf(arquivo, "%s\n", txt);
     fclose(arquivo);
     return 0;
 }
