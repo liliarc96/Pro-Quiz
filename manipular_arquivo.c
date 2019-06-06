@@ -4,6 +4,10 @@
 
 #include "manipular_arquivo.h"
 
+int modificarTxt(char * nArquivo);
+int mostrarRanking();
+int addPontuacao(char * jogador, int pontuacao);
+
 int modificarTxt(char * nArquivo){
     FILE * arquivo;
     char str[1000];
@@ -11,7 +15,7 @@ int modificarTxt(char * nArquivo){
     //Append:
     arquivo = fopen(nArquivo, "a");
     if(arquivo == NULL){
-       printf("\nO arquivo n„o pode ser aberto...");
+       printf("\nO arquivo n√£o pode ser aberto...");
        exit(EXIT_FAILURE);
     }
     fgets(str, sizeof str, stdin);
@@ -74,7 +78,7 @@ int addPontuacao(char * jogador, int pontuacao){
     FILE * arquivo;
     arquivo = fopen("pontuacao.txt", "a");
     if(!arquivo){
-       printf("\nO arquivo n„o pode ser aberto...");
+       printf("\nO arquivo n√£o pode ser aberto...");
        return 0;
     }
     fprintf(arquivo, "%s: ", jogador);
