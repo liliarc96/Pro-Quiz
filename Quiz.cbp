@@ -41,9 +41,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="etc.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="manipular_arquivo.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,6 +49,9 @@
 		<Unit filename="perguntasfaceis.txt" />
 		<Unit filename="perguntasintermediarias.txt" />
 		<Unit filename="pontuacao.txt" />
+		<Unit filename="quiz.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="respostasdificeis.txt" />
 		<Unit filename="respostasfaceis.txt" />
 		<Unit filename="respostasintermediarias.txt" />
