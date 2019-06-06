@@ -136,7 +136,7 @@ int main(){
 					a zero.
 					A função geradorAleatorio(); gera números aléatorios de 0 a 9 até que todo o arr[] = {1}
 					*/
-					for(acertos = 0;resta > 0;){
+					for(acertos = erros = 0;resta > 0;){
 						randomico = geradorAleatorio();
 						if(!arr[randomico]){
 						printf("\nPERGUNTA %d:\n", questoes);
