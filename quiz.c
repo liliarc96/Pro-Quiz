@@ -39,8 +39,9 @@
         opcao: int        ==> Opção do menu
         repeticao: int    ==> default = 1; Continua a exibir o menu após sair da opção escolhida
         randomico:  int   ==> Número  que recebe valor da função geradorAleatorio(): int
-	alternativa: char ==> Recebe A B C D ou P, compara a resposta do usuário com o array de respostas certas 
-			      ou subtrai a quantidade de pulos (pulos--)      
+	alternativa: char ==> Recebe A B C D ou P, compara a resposta do usuário com o array de respostas certas
+                          ou subtrai a quantidade de pulos (pulos--)
+                          Tambem recebe F I D para editar os txt de modificar os arquivos de perguntas & respostas
 	questões: int     ==> default = 1; Numera as respostas e reseta a cada nível novo
     |NUM| arr: bool       ==> Inicia com NUM zeros, o número escolhido modifica para 1 para não ser escolhido novamente
 
@@ -73,10 +74,12 @@
 int main(){
     int opcao, repeticao = 1, i;
 
+    char texto[1000];
     char perguntas[NUM][1000];
     char respostas[NUM][1000];
     int resta = NUM;
     char alternativa;
+    char * nomeArquivo;
 
     char corretasFaceis[NUM] = {'B','B','C','C','B','B','B','B','D','D'};
     char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
@@ -103,7 +106,7 @@ int main(){
     arquivo = fopen("respostasfaceis.txt", "r");
     for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
     fclose(arquivo);
-    //Termina de carregar os arquivos de respostas & perguntas fáceis	
+    //Termina de carregar os arquivos de respostas & perguntas fáceis
 
     //Muda a cor do background para preto (0) e da cor da letra para verde(A)
     system("color 0A");
@@ -283,7 +286,7 @@ int main(){
 						system("cls");
 
 						pontuacao += ((acertos * 50)-(erros * 20));
-						printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao final de %d!", nomeJogador, acertos, erros, pontuacao);						
+						printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao final de %d!", nomeJogador, acertos, erros, pontuacao);
 					}
 
 					addPontuacao(nomeJogador,pontuacao);
@@ -310,6 +313,63 @@ int main(){
 					system("cls");
 					break;
               case 3:
+                    printf("A T E N C A O ! ! !\n\n\n"
+                           "Obedeca a formatacao de perguntas e repostas!\n"
+                           "> Digite qual a dificuldade que deseja modificar:\n\n"
+                           "F para faceis;\n"
+                           "I para intermediarias;\n"
+                           "D para dificeis;\n"
+                           "> ");
+                    fflush(stdin);
+					alternativa = getchar();
+
+					if(alternativa == 'F'){
+                        nomeArquivo = "perguntasfaceis.txt";
+                        printf("\nDigite a pergunta desejada:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+
+                        nomeArquivo = "respostasfaceis.txt";
+                        printf("\nDigite as respostas desejadas:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+					}else if(alternativa == 'I'){
+					    nomeArquivo = "perguntasintermediarias.txt";
+                        printf("\nDigite a pergunta desejada:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+
+                        nomeArquivo = "respostasintermediarias.txt";
+                        printf("\nDigite as respostas desejadas:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+					}else if(alternativa == 'D'){
+					    nomeArquivo = "perguntasdificeis.txt";
+                        printf("\nDigite a pergunta desejada:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+
+                        nomeArquivo = "respostasdificeis.txt";
+                        printf("\nDigite as respostas desejadas:\n"
+                               "> ");
+                        scanf("%s", texto);
+
+                        modificarTxt(nomeArquivo, texto);
+					}else{
+					    printf("OPCAO INVALIDA!");
+					}
+
+                    titulo();
 					menu();
 					scanf("%d", &opcao);
 					system("cls");
