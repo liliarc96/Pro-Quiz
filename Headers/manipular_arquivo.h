@@ -7,7 +7,7 @@ typedef struct t_usuario{
     struct t_usuario * proximo;
 } usuario;
 
-int modificarTxt(char * nArquivo);
+int modificarTxt(char * nArquivo, char * txt);
 
 int mostrarRanking();
 
