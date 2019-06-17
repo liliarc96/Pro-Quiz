@@ -3,15 +3,14 @@
                                                     Q U I Z by Lília & Renata
                                                -----------------------------------
 
-   ----------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------------------------------------------------------------------------
    HEADERS & SOURCES:
 
             display.c & display.h            ==> Todos os textos que aparecem no jogo
    manipular_arquivo.c & manipular_arquivo.h ==> Tudo relacionado a manipulação de arquivos (abrir, fechar e modificar)
-               etc.c & etc.h                 ==> Funções que auxiliam no andamento do jogo
-   ----------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------------------------------------------------------------------------
 
-   ----------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------------------------------------------------------------------------
    FUNÇÕES GLOBAIS:
 
     ->EM DISPLAY:
@@ -19,18 +18,19 @@
         guia(): void     ==> Apresenta o guia do jogo
         menu(): void     ==> Estrutura do menu com suas opções
         titulo(): void   ==> Nome do quiz
-	gameOver(): void ==> Mensagem de Game Over
 
     ->EM MANIPULAR_ARQUIVO:
         addPontuacao(char*jogador, int pontuacao): int ==> Adiciona uma nova entrada em pontuacao.txt
         modificarTxt(char*nArquivo): int               ==> Modifica o .txt das perguntas e respostas
         mostrarRanking(): int                          ==> Mostra o ranking salvo em pontuacao.txt
 
-    ->EM ETC:
-        geradorAleatorio(): int ==> Gera um valor aleatório e o retorna
-   ----------------------------------------------------------------------------------------------------------------------
+    ->EM QUIZ:
+        nivel(char*nomeJogador, char dificuldade, char (*pergunta)[1000], char (*resposta)[1000], char * comparacao): int
+		                ==> Estrutura dos níveis do jogo
+		mainQuiz(): int ==> Estrutura do jogo
+   ----------------------------------------------------------------------------------------------------------------------------
 
-   ----------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------------------------------------------------------------------------
    VARIÁVEIS:
 
         _| NUM ==> É usada em várias outras variáveis para fazer comparações, o valor original é 10 |_
@@ -39,10 +39,9 @@
         opcao: int        ==> Opção do menu
         repeticao: int    ==> default = 1; Continua a exibir o menu após sair da opção escolhida
         randomico:  int   ==> Número  que recebe valor da função geradorAleatorio(): int
-	alternativa: char ==> Recebe A B C D ou P, compara a resposta do usuário com o array de respostas certas
-                          ou subtrai a quantidade de pulos (pulos--)
-                          Tambem recebe F I D para editar os txt de modificar os arquivos de perguntas & respostas
-	questões: int     ==> default = 1; Numera as respostas e reseta a cada nível novo
+	    alternativa: char ==> Recebe A B C D ou P, compara a resposta do usuário com o array de respostas certas.
+                          	  Tambem recebe F I D para editar os txt de modificar os arquivos de perguntas & respostas
+	    questões: int     ==> default = 1; Numera as respostas e reseta a cada nível novo
     |NUM| arr: bool       ==> Inicia com NUM zeros, o número escolhido modifica para 1 para não ser escolhido novamente
 
     ->DE PERGUNTAS & RESPOSTAS:
@@ -56,20 +55,90 @@
     ->DE JOGADOR:
         nomeJogador: char ==> Nome do jogador
         pontuacao: int    ==> Pontuação do jogador
-        pular: int        ==> Quantidade de pulos que o jogador ainda tem
-	acertos: int      ==> Acertos por nível
-	erros: int        ==> Erros por nível
-   ----------------------------------------------------------------------------------------------------------------------
+	    acertos: int      ==> Acertos por nível
+	    erros: int        ==> Erros por nível
+   ----------------------------------------------------------------------------------------------------------------------------
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <ctype.h>
+#include <time.h>
 
 #define NUM 10
 
 #include "manipular_arquivo.h"
 #include "display.h"
-#include "etc.h"
+/*
+													PARA A INTEGRAÇÃO
+int mainQuiz();
+
+*/
+
+int nivel(char*nomeJogador, char dificuldade, char (*pergunta)[1000], char (*resposta)[1000], char * comparacao);
+
+//Níveis do jogo!
+int nivel(char * nomeJogador, char dificuldade, char (*pergunta)[1000], char (*resposta)[1000], char * comparacao){
+    int randomico;
+    bool arr[NUM] = {0};
+    int resta = NUM;
+    time_t t;
+
+    int acertos;
+    int erros;
+    int questoes = 1;
+    int pontuacao = 0;
+
+    char alternativa;
+
+    srand((unsigned)time(&t));
+
+    for(acertos = erros = 0;resta > 0;){
+        randomico = (rand() % 10);
+		if(!arr[randomico]){
+			printf("\nPERGUNTA %d:\n", questoes);
+
+			printf("> "
+                   "%s\n", pergunta[randomico]);
+
+			printf("%s\n\n", resposta[randomico]);
+
+			printf("Pressione A, B, C ou D para escolher a alternativa, P para pular!\n"
+                   "> ");
+			fflush(stdin);
+			alternativa = getchar();
+			if(alternativa == comparacao[randomico]){
+				acertos++;
+				printf("\nACERTOU!\n\n");
+			}else{
+				erros++;
+				printf("ERROU!\n\n");
+			}
+			arr[randomico] = 1;
+			resta--;
+			questoes++;
+			system("pause");
+			system("cls");
+		}
+	}
+
+	if(dificuldade == 'F'){
+        pontuacao = acertos * 10;
+        printf("\n\nCompletou o nivel FACIL!\n\n");
+	}else if(dificuldade == 'M'){
+	    pontuacao = ((acertos * 30)-(erros * 10));
+	    printf("\n\nCompletou o nivel INTERMEDIARIO!\n\n");
+	}else if(dificuldade == 'D'){
+        pontuacao += ((acertos * 50)-(erros * 20));
+        printf("\n\nCompletou o nivel DIFICIL!\n\n");
+	}
+	printf("%s teve %d acertos, %d erros e obteve uma pontuacao de %d nesse nivel!\n\n", nomeJogador, acertos, erros, pontuacao);
+
+	system("pause");
+	system("cls");
+
+	return pontuacao;
+}
 
 int main(){
     int opcao, repeticao = 1, i;
@@ -77,7 +146,6 @@ int main(){
     char texto[1000];
     char perguntas[NUM][1000];
     char respostas[NUM][1000];
-    int resta = NUM;
     char alternativa;
     char * nomeArquivo;
 
@@ -85,28 +153,10 @@ int main(){
     char corretasIntermediarias[NUM] = {'C','A','B','A','A','A','C','B','C','D'};
     char corretasDificeis[NUM] = {'B','B','B','D','B','A','B','B','C','A'};
 
-    int randomico;
-    bool arr[NUM] = {0};
-
     char nomeJogador[200];
-    int pontuacao;
-    int acertos;
-    int erros;
+    int pontuacao = 0;
 
-    int pular = 5;
-    int questoes = 1;
-
-    //Carregando o nível FÁCIL!
     FILE * arquivo;
-
-    arquivo = fopen("perguntasfaceis.txt", "r");
-    for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
-    fclose(arquivo);
-
-    arquivo = fopen("respostasfaceis.txt", "r");
-    for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
-    fclose(arquivo);
-    //Termina de carregar os arquivos de respostas & perguntas fáceis
 
     //Muda a cor do background para preto (0) e da cor da letra para verde(A)
     system("color 0A");
@@ -131,166 +181,54 @@ int main(){
 					system("pause");
 					system("cls");
 
-					/*
-					Loop gera novas perguntas até que a variável resta (recebe a quantidade de perguntas & respostas) chegue
-					a zero.
-					A função geradorAleatorio(); gera números aléatorios de 0 a 9 até que todo o arr[] = {1}
-					*/
-					for(acertos = erros = 0;resta > 0;){
-						randomico = geradorAleatorio();
-						if(!arr[randomico]){
-						printf("\nPERGUNTA %d:\n", questoes);
-						printf("> "
-							"%s\n", perguntas[randomico]);
-						printf("%s\n\n", respostas[randomico]);
-						printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
-							"> ");
-						fflush(stdin);
-						alternativa = getchar();
-						if(alternativa == corretasFaceis[randomico]){
-							acertos++;
-							printf("\nACERTOU!\n\n");
-						}else if((alternativa == 'P') && (pular > 0)){
-							pular--;
-							printf("PULOU! %s tem %d pulos restantes!\n\n", nomeJogador, pular);
-						}else{
-							erros++;
-							printf("ERROU!\n\n");
-						}
-						arr[randomico] = 1;
-						resta--;
-						questoes++;
-						system("pause");
-						system("cls");
-						}
-					}
+					//O JOGO COMEÇA AQUI!!!
+
+                    //Inicializando o nível FÁCIL!
+                    arquivo = fopen("perguntasfaceis.txt", "r");
+                    for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
+
+                    arquivo = fopen("respostasfaceis.txt", "r");
+                    for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
+
+					//Começa nível fácil:
+					alternativa = 'F';
+					pontuacao += nivel(nomeJogador, alternativa, perguntas, respostas, corretasFaceis);
 					system("cls");
 
-					//Calculando a pontuação...
-					pontuacao = acertos * 10;
-					printf("%s, teve %d acertos e %d erros nesse nivel e obteve uma pontuacao de %d!", nomeJogador, acertos,erros, pontuacao);
-					if(acertos < 5){
-						//Não passou de nível e levou um Game Over!
-						gameOver();
-						system("pause");
-						system("cls");
-					}
-					else{
-						printf("\n\nParabains, voce completou o nivel FACIL!\n\n");
+					//Inicializando o nível INTERMEDIÁRIO!
+					arquivo = fopen("perguntasintermediarias.txt", "r");
+                    for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
 
-						system("pause");
-						system("cls");
-						//Inicializando o nível INTERMEDIÁRIO!
-						arquivo = fopen("perguntasintermediarias.txt", "r");
-						for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
-						fclose(arquivo);
+                    arquivo = fopen("respostasintermediarias.txt", "r");
+                    for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
+                    fclose(arquivo);
 
-						arquivo = fopen("respostasintermediarias.txt", "r");
-						for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
-						fclose(arquivo);
-						//Terminou de carregar as respostas & perguntas intermediárias
+                    //Começa nível intermediário:
+                    alternativa = 'M';
+                    pontuacao += nivel(nomeJogador, alternativa, perguntas, respostas, corretasIntermediarias);
+					system("cls");
 
-						//Limpando o array bool
-						for(i = 0;i < NUM;i++){
-							arr[i] = 0;
-						}
+					//Inicializando o nível DIFÍCIL!
+					arquivo = fopen("perguntasdificeis.txt", "r");
+					for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
+					fclose(arquivo);
 
-						for(acertos = erros = 0,resta = NUM,questoes = 1;resta > 0;){
-							randomico = geradorAleatorio();
-							if(!arr[randomico]){
-								printf("\nPERGUNTA %d:\n\n", questoes);
-								printf("> "
-										"%s\n", perguntas[randomico]);
-								printf("%s\n\n", respostas[randomico]);
-								printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
-										"> ");
-								fflush(stdin);
-								alternativa = getchar();
-								if(alternativa == corretasIntermediarias[randomico]){
-									acertos++;
-									printf("ACERTOU!\n\n");
-								}else if((alternativa == 'P') && (pular > 0)){
-									pular--;
-									printf("PULOU! %s tem %d pulos restantes!\n", nomeJogador, pular);
-							    }else{
-									erros++;
-									printf("ERROU!\n\n");
-								}
-							}
-							arr[randomico] = 1;
-							resta--;
-							questoes++;
-							system("pause");
-							system("cls");
-						}
-						system("cls");
+					arquivo = fopen("respostasdificeis.txt", "r");
+					for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
+					fclose(arquivo);
 
-						//Calculando a pontuação...
-						pontuacao += ((acertos * 30)-(erros * 10));
-						printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao de %d!", nomeJogador, acertos, erros, pontuacao);
-						if(acertos < 6){
-							//Não passou de nível e recebeu um Game Over!
-							gameOver();
-							system("pause");
-							system("cls");
-						}
-						else{
-							printf("\n\nParabains, voce completou o nivel INTERMEDIARIO!\n\n");
+					//Começa nível difícil:
+					alternativa = 'D';
+					pontuacao += nivel(nomeJogador, alternativa, perguntas, respostas, corretasDificeis);
+                    system("cls");
 
-							system("pause");
-							system("cls");
-							arquivo = fopen("perguntasdificeis.txt", "r");
-							for (i=0; i< NUM && fgets(perguntas[i], 1000, arquivo) != NULL; i++);
-							fclose(arquivo);
-
-							arquivo = fopen("respostasdificeis.txt", "r");
-							for (i=0; i< NUM && fgets(respostas[i], 1000, arquivo) != NULL; i++);
-							fclose(arquivo);
-
-							//Limpando o array bool novamente...
-							for(i = 0;i < NUM;i++){
-								arr[i] = 0;
-							}
-
-							for(acertos = erros = 0,resta = NUM,questoes = 1;resta > 0;){
-								randomico = geradorAleatorio();
-								if(!arr[randomico]){
-									printf("\nPERGUNTA %d:\n\n", questoes);
-									printf("> "
-											"%s\n", perguntas[randomico]);
-									printf("%s\n\n", respostas[randomico]);
-									printf("Pressione a A, B, C ou D para escolher a alternativa, P para pular!\n"
-											"> ");
-									fflush(stdin);
-									alternativa = getchar();
-									if(alternativa == corretasDificeis[randomico]){
-										acertos++;
-										printf("\nACERTOU!\n\n");
-									}else if((alternativa == 'P') && (pular > 0)){
-										pular--;
-										printf("PULOU! %s tem %d pulos restantes!\n", nomeJogador, pular);
-									}else{
-										erros++;
-										printf("ERROU!\n\n");
-									}
-								arr[randomico] = 1;
-								resta--;
-								questoes++;
-								system("pause");
-								system("cls");
-								}else{
-									arr[randomico] = 1;
-								}
-							}
-						}
-						system("cls");
-
-						pontuacao += ((acertos * 50)-(erros * 20));
-						printf("%s, teve %d acertos e %d erros nesse nivel, obtendo uma pontuacao final de %d!", nomeJogador, acertos, erros, pontuacao);
-					}
-
+                    //Adiciona a pontuação:
 					addPontuacao(nomeJogador,pontuacao);
 
+					//Mostra o ranking:
 					mostrarRanking();
 					printf("\n\n");
 					system("pause");
@@ -388,6 +326,7 @@ int main(){
 					break;
               default:
 					printf("Inexistente, tente novamente: ");
+					titulo();
 					menu();
 					scanf("%d", &opcao);
 					break;
